@@ -1,0 +1,33 @@
+/**
+
+@name Yuno Theme
+
+@author psonox
+
+@version 1.0
+
+@description Dark Yuno green horror theme
+*/
+
+@import url('https://raw.githack.com/VaporousCreeper/BetterDiscord-ThemesAndPlugins/master/Themes/GGO_Kirito/core.css');
+
+{
+/* Background */
+--background: url('https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg');
+
+/* Text */
+--activetext-colour: #b7ffcc;
+
+/* Primary (Yuno green glow) */
+--primary1-colour: #00ff88;
+--primary2-colour: rgba(0,255,136,0.6);
+--primary3-colour: rgba(0,120,60,0.7);
+--primary4-colour: rgba(0,80,40,0.5);
+
+/* Panels / transparency */
+--secondary1-colour: rgba(0,0,0,0.4);
+--secondary2-colour: rgba(15,15,15,0.6);
+--secondary3-colour: rgba(0,0,0,0.85);
+--secondary4-colour: rgba(0,0,0,0.5);
+
+}
