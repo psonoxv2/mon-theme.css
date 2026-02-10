@@ -40,4 +40,20 @@
 [class^="scrollableContainer_"] {
   background: rgba(0,0,0,0.8) !important;
   border: 1px solid var(--main-color) !important;
+
+}
+
+#app-mount {
+  /* "contain" permet de voir toute l'image sans la couper, 
+     "cover" remplit tout l'écran (quitte à couper un peu les bords) */
+  background-size: cover !important; 
+  
+  /* Centre l'image pour que Yuno soit bien au milieu */
+  background-position: center !important;
+  
+  /* Empêche l'image de se répéter si l'écran est trop grand */
+  background-repeat: no-repeat !important;
+  
+  /* Pour garder les pixels bien nets */
+  image-rendering: -webkit-optimize-contrast !important;
 }
