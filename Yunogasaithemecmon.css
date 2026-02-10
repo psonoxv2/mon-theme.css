@@ -1,32 +1,25 @@
 /**
-
-* @name Yuno Theme
-* @author psonox
-* @version 1.0
-* @description Dark Yuno green horror theme
-  */
+ * @name Yuno Theme
+ * @author psonox
+ * @version 1.1
+ * @description Dark Yuno green horror theme
+ */
 
 /* VARIABLES */
-:root{
---background: url('[https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg](https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg)');
-
-```
---text-color: #b7ffcc;
-
---primary: #00ff88;
---primary-glow: rgba(0,255,136,0.6);
---dark-green: rgba(0,120,60,0.7);
-
---panel-dark: rgba(0,0,0,0.85);
---panel: rgba(0,0,0,0.6);
---panel-light: rgba(0,0,0,0.4);
-```
-
+:root {
+  --background: url('[https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg](https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg)');
+  --text-color: #b7ffcc;
+  --primary: #00ff88;
+  --primary-glow: rgba(0, 255, 136, 0.6);
+  --dark-green: rgba(0, 120, 60, 0.7);
+  --panel-dark: rgba(0, 0, 0, 0.85);
+  --panel: rgba(0, 0, 0, 0.6);
+  --panel-light: rgba(0, 0, 0, 0.4);
 }
 
 /* BACKGROUND GLOBAL */
-.appMount-2yBXZl {
-background: var(--background) center/cover no-repeat fixed !important;
+.appMount-2yBXZl, .appAsidePanelWrapper-ev4S9y {
+  background: var(--background) center/cover no-repeat fixed !important;
 }
 
 /* PANELS TRANSPARENTS */
@@ -34,41 +27,41 @@ background: var(--background) center/cover no-repeat fixed !important;
 .sidebar-1tnWFu,
 .chat-2ZfjoI,
 .membersWrap-3NUR2t,
-.container-1NXEtd {
-background: var(--panel) !important;
-backdrop-filter: blur(6px);
+.container-1NXEtd,
+.container-ZMc96U {
+  background: var(--panel) !important;
+  backdrop-filter: blur(6px);
 }
 
 /* BARRE DU HAUT */
 .titleBar-1it3bQ {
-background: var(--panel-dark) !important;
+  background: var(--panel-dark) !important;
 }
 
 /* TEXTE */
-
 * {
   color: var(--text-color);
-  }
+}
 
 /* HOVER + ACCENTS */
 .button-1EGGcP:hover,
 .interactive-iyXY_x:hover,
 .selected-1-Z6gm {
-background: var(--primary-glow) !important;
+  background: var(--primary-glow) !important;
 }
 
 /* MESSAGES */
 .message-2CShn3:hover {
-background: var(--panel-light) !important;
+  background: var(--panel-light) !important;
 }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar-thumb {
-background: var(--primary);
+  background: var(--primary) !important;
 }
 
 /* INPUT */
 .scrollableContainer-15eg7h {
-background: var(--panel-dark) !important;
-border: 1px solid var(--primary-glow);
+  background: var(--panel-dark) !important;
+  border: 1px solid var(--primary-glow);
 }
