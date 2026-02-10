@@ -1,43 +1,63 @@
 /**
  * @name Yuno Final Boss
  * @author psonox
- * @version 4.0
+ * @version 5.0
  */
 
-/* 1. L'IMPORTATION DU MOTEUR DE TRANSPARENCE */
+/* 1. L'IMPORTATION DU MOTEUR (Obligatoire pour la transparence) */
 @import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
 
 :root {
-  /* Ton image GitHub */
+  /* LIEN DIRECT VERS TON IMAGE */
   --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/2d932fba9c8099fff255153da383b2d7.jpg');
   
-  /* Tes couleurs */
   --main-color: #00ff88;
   --text-color: #b7ffcc;
   
-  /* Réglages de visibilité */
-  --background-brightness: 0.5;
-  --background-blur: 0px;
-  --transparency-alpha: 0.15;
-  --transparency-color: #000;
+  /* Paramètres d'affichage */
+  --background-brightness: 0.7; /* 0.7 = assez clair, 1.0 = image pure */
+  --background-blur: 0px !important;
+  --transparency-alpha: 0.2;
 }
 
-/* 2. FORCER LE TEXTE ET LES BORDURES EN VERT */
+/* 2. RÉGLAGE DU FORMAT D'IMAGE (Pour remplir tout l'écran) */
+#app-mount,
+.bg-1Q_c1X {
+  background-image: var(--background) !important;
+  background-size: cover !important;      /* Force l'image à prendre toute la place */
+  background-position: center top !important; /* Priorité au visage de Yuno */
+  background-attachment: fixed !important;   /* L'image ne bouge pas quand on scroll */
+  image-rendering: auto !important;
+}
+
+/* 3. NETTOYAGE RADICAL DU GRIS */
+/* On force le vide sur toutes les couches qui pourraient bloquer l'image */
+.theme-dark, .theme-light,
+.app-3xd6d0,
+.bg-1Q_c1X,
+.container-2cd8Mz,
+.chat-2ZfjoI,
+.sidebar-1tnWFu,
+.panels-3wY9n4,
+.members-3WRC_L {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 4. TEXTE ET ACCENTS */
 * {
   color: var(--text-color) !important;
   border-color: var(--main-color) !important;
 }
 
-/* 3. TUER LE GRIS UNE BONNE FOIS POUR TOUTES */
-.theme-dark, .theme-light {
-  --background-primary: transparent !important;
-  --background-secondary: transparent !important;
-  --background-tertiary: transparent !important;
-  --background-floating: rgba(0,0,0,0.8) !important;
+/* Barre de saisie de message */
+[class^="scrollableContainer_"] {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid var(--main-color) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
 }
 
-/* Barre de saisie */
-[class^="scrollableContainer_"] {
-  background: rgba(0,0,0,0.8) !important;
-  border: 1px solid var(--main-color) !important;
+/* Scrollbar en vert */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color) !important;
 }
