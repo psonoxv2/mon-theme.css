@@ -1,7 +1,7 @@
 /**
  * @name Yuno Theme
  * @author psonox
- * @version 1.6
+ * @version 1.7
  */
 
 :root {
@@ -10,43 +10,43 @@
   --primary: #00ff88;
 }
 
-/* 1. ON FORCE L'IMAGE SUR L'ÉLÉMENT RACINE */
-html, body, #app-mount {
+/* On force l'image sur l'élément que Discord utilise pour le gris de base */
+.bg-1Q_c1X, 
+.appMount-2yBXZl, 
+body {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* 2. TRANSPARENCE RADICALE (On cible TOUS les conteneurs de Discord) */
-.app-3xd6d0, 
-.bg-1Q_c1X, 
-.container-2cd8Mz, 
-.chat-2ZfjoI, 
-.sidebar-1tnWFu, 
-.members-3WRC_L, 
-.container-ZMc96U, 
-.panels-3wY9n4, 
+/* Cette classe cache souvent tout au dernier moment */
 .layer-2A6QeL, 
-.standardSidebarView-E9Pc3z, 
-.contentRegion-3HkfJJ, 
-.content-1jQy2g,
-.applicationStore-2637vC,
-.container-3w7J_l {
+.container-1e_seg, 
+.app-3xd6d0 {
   background: transparent !important;
 }
 
-/* 3. LISIBILITÉ : On assombrit juste les zones de texte */
-.chatContent-3K79t5, 
+/* Supprime le gris des salons et de la liste d'amis */
+.container-2cd8Mz, 
+.chat-2ZfjoI, 
 .sidebar-1tnWFu, 
-.membersWrap-3NUR2t {
+.container-ZMc96U, 
+.panels-3wY9n4, 
+.members-3WRC_L {
+  background: transparent !important;
+}
+
+/* On ajoute un flou sombre pour que ce soit lisible et stylé */
+.chatContent-3K79t5, 
+.sidebar-1tnWFu {
   background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(4px);
 }
 
-/* 4. ON COLORISE LE TEXTE */
+/* TEXTE VERT */
 * {
   color: var(--text-color) !important;
 }
 
-/* Barre de saisie */
+/* Fix pour la barre de recherche et d'écriture */
 .scrollableContainer-15eg7h {
   background: rgba(0, 0, 0, 0.8) !important;
   border: 1px solid var(--primary) !important;
