@@ -13,12 +13,12 @@
   --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/refs/heads/main/lucie.png');
 
   /* COULEURS */
-  --main-color: #000000;
-  --text-color: #ffffff;
+  --main-color: #ffffff;
+  --text-color: #000000;
 
   /* RÉGLAGES IMAGE */
-  --background-brightness: 95%;
-  --background-blur: 15px !important;
+  --background-brightness: 100%;
+  --background-blur: 0px !important;
   --background-size: cover;
   --background-position: center;
 }
