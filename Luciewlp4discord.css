@@ -1,142 +1,84 @@
 /**
  * @name Yuno Ultra Long Clean
- * @author psonox
- * @version 9.0
+ * @author SUKAU
+ * @version 10.0
  */
 
-/* 1. MOTEURS DE TRANSPARENCE EXTERNES */
-@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
+/* 1. SIGNATURE "BY SUKAU" (Remplace l'import BasicBackground) */
+[class*="wordmarkWindows"]::after {
+  content: "BY SUKAU";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 11px;
+  font-family: "Whitney", "Helvetica Neue", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+[class*="wordmarkWindows"] svg {
+  display: none !important; /* Cache le logo Discord */
+}
+
+/* 2. MOTEUR DE TRANSPARENCE */
 @import url('https://discord-custom-covers.github.io/Universal-Transparancy/source.css');
 
 :root {
-  /* TON IMAGE */
   --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/refs/heads/main/lucie.png');
-
-  /* COULEURS */
   --main-color: #ffffff;
   --text-color: #ffffff;
-
-  /* RÉGLAGES IMAGE */
   --background-brightness: 100%;
   --background-blur: 0px !important;
   --background-size: cover;
   --background-position: center;
 }
 
-/* 2. FORCE  SUR TOUTES LES COUCHES PROFONDES */
+/* 3. FORCE LA TRANSPARENCE PARTOUT */
 html, body, #app-mount, 
-.bg-1Q_c1X, 
-.appAsidePanelWrapper-ev4S9y, 
-.layer-2A6QeL, 
-.container-1e_seg {
+[class*="background"], 
+[class*="chat_"], 
+[class*="content_"], 
+[class*="sidebar_"], 
+[class*="members_"], 
+[class*="panels_"], 
+[class*="guilds_"] {
+  background: transparent !important;
   background-image: var(--background) !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
-  background-color: transparent !important;
 }
 
-/* 3. TON BLOC FAVORI (RÉPÉTÉ ET RENFORCÉ) */
-.theme-dark, .theme-light, .theme-darker {
+/* 4. COULEURS DES COUCHES */
+.theme-dark, .theme-light {
   --background-primary: transparent !important;
   --background-secondary: transparent !important;
-  --background-secondary-alt: transparent !important;
   --background-tertiary: transparent !important;
-  --background-accent: transparent !important;
   --background-floating: rgba(0,0,0,0.8) !important;
-  --modal-background: rgba(0,0,0,0.8) !important;
-  --channeltextarea-background: rgba(0,0,0,0.5) !important;
 }
 
-/* 4. SUPPRESSION MASSIVE PAR MOTS-CLÉS (LE NETTOYEUR GIGA LONG) */
-[class*="background"],
-[class*="chat_"],
-[class*="content_"],
-[class*="container_"],
-[class*="sidebar_"],
-[class*="members_"],
-[class*="panels_"],
-[class*="wrapper_"],
-[class*="standardSidebarView"],
-[class*="scroller_"],
-[class*="privateChannels_"],
-[class*="typeWindows_"],
-[class*="guilds_"] {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* 5. FIX POUR LES ZONES RÉCALCITRANTES */
-.container-2cd8Mz, .mainContent-u_W2WD, .members-3WRC_L, .container-ZMc96U {
-  background: transparent !important;
-}
-
-/* 6. LISIBILITÉ (ON AJOUTE UN VOILE NOIR TRÈS LÉGER POUR VOIR LES MESSAGES) */
+/* 5. LISIBILITÉ (VOILE NOIR POUR LES TEXTES) */
 .sidebar-1tnWFu, .members-3WRC_L {
-  background: rgba(0, 0, 0, 0.2) !important; /* Voile très léger */
-  backdrop-filter: blur(8px); /* Floute l'image derrière pour faire ressortir les noms */
+  background: rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(8px);
 }
 
 .chatContent-3K79t5 {
   background: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* 7. TEXTE VERT PARTOUT */
+/* 6. CORRECTION TEXTE (Correction de l'erreur d'accolade) */
 * {
- body, span, div:not([class*="dots"]):not([class*="status"]) {
-  color: var(--text-color); 
+  color: var(--text-color) !important;
 }
 
-/* 8. BARRE DE MESSAGE */
-svg:not([class*="mask"]) {
-  fill: currentColor;
-}
-
-/* 9. SUPPRESSION DES BORDURES GRISES DÉGUEULASSES */
-[class*="separator"], [class*="guildSeparator"] {
-  display: none !important;
-}
-
-/* 10. FORCE LE "NO-SHADOW" */
-[class*="shadow"] {
-  box-shadow: none !important;
-}
-
-  [class*="username"] {
+[class*="username"] {
   color: inherit !important;
 }
 
-@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
-@import url('https://discord-custom-covers.github.io/Universal-Transparancy/source.css');
-
-:root {
-  --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/refs/heads/main/lucie.png');
-  --main-color: #ffffff;
-  --text-color: #ffffff;
-  --background-brightness: 100%;
-  --background-blur: 0px !important;
-  --background-size: cover;
-  --background-position: center;
-}
-
-[class*="wordmarkWindows"]::after {
-    content: "BY SUKAU" !important;
-    display: block !important;
-    visibility: visible !important;
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    font-size: 11px;
-    font-family: "Whitney", "Helvetica Neue", sans-serif;
-    color: rgba(255,255,255,0.5);
-}
-
-/* Cache le logo Discord d'origine pour ne pas superposer */
-[class*="wordmarkWindows"] svg {
-    display: none !important;
-}
-
-/* Si un texte d'auteur apparaît dans la colonne des paramètres */
-.side-2urZ_i [class*="custom-column"]::before {
-    content: "BY SUKAU" !important;
+/* 7. NETTOYAGE VISUEL */
+[class*="separator"], [class*="guildSeparator"], [class*="shadow"] {
+  display: none !important;
+  box-shadow: none !important;
 }
