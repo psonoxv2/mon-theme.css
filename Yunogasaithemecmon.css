@@ -79,15 +79,13 @@ html, body, #app-mount,
 
 /* 7. TEXTE VERT PARTOUT */
 * {
-  color: var(--text-color) !important;
-  fill: var(--main-color) !important; /* Pour les icônes */
+ body, span, div:not([class*="dots"]):not([class*="status"]) {
+  color: var(--text-color); 
 }
 
 /* 8. BARRE DE MESSAGE */
-[class^="scrollableContainer_"] {
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 2px solid var(--main-color) !important;
-  border-radius: 8px;
+svg:not([class*="mask"]) {
+  fill: currentColor;
 }
 
 /* 9. SUPPRESSION DES BORDURES GRISES DÉGUEULASSES */
@@ -98,4 +96,8 @@ html, body, #app-mount,
 /* 10. FORCE LE "NO-SHADOW" */
 [class*="shadow"] {
   box-shadow: none !important;
+}
+
+  [class*="username"] {
+  color: inherit !important;
 }
