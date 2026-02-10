@@ -1,16 +1,40 @@
-/* Change la couleur principale */
-:root {
-  --brand-experiment: #8b5cf6;
-  --brand-experiment-560: #7c3aed;
-}
+/**
+ * @name MonThemeVertNoir
+ * @author psonoxv2
+ * @version 1.0
+ * @description Fond Discord avec mélange vert foncé/noir
+ */
 
-/* Fond principal */
+/* Fond principal Discord */
 .appMount-2yBXZl {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-image: 
+    linear-gradient(rgba(0, 42, 26, 0.7), rgba(0, 0, 0, 0.7)), /* mélange vert foncé → noir */
+    url("https://raw.githubusercontent.com/psonoxv2/mon-theme/main/background.png"); /* ton image RAW */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
-/* Messages */
+/* Messages — coins arrondis et légère transparence */
 .message-2CShn3 {
   border-radius: 10px;
+  background-color: rgba(0, 42, 26, 0.5); /* vert foncé transparent */
   padding: 6px;
 }
+
+/* Sidebar — un peu de style sombre */
+.daSidebar-3yQzCM {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Barre d’en-tête Discord */
+.titleBar-3v41kD {
+  background-color: rgba(0, 42, 26, 0.9); /* vert foncé */
+}
+
+/* Texte des messages — blanc pour contraster */
+.markup-2BOw-j {
+  color: #e0e0e0;
+}
+
