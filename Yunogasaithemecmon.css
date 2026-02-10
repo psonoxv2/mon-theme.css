@@ -1,47 +1,101 @@
 /**
- * @name Yuno Final Boss Optimized
+ * @name Yuno Ultra Long Clean
  * @author psonox
- * @version 6.1
+ * @version 9.0
  */
 
+/* 1. MOTEURS DE TRANSPARENCE EXTERNES */
 @import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
+@import url('https://discord-custom-covers.github.io/Universal-Transparancy/source.css');
 
 :root {
---background: url('https://w.wallhaven.cc/full/85/wallhaven-85m99y.jpg');  --main-color: #00ff88;
+  /* TON IMAGE */
+  --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/2d932fba9c8099fff255153da383b2d7.jpg');
+  
+  /* COULEURS */
+  --main-color: #00ff88;
   --text-color: #b7ffcc;
   
-  --background-brightness: 0.8;
+  /* RÉGLAGES IMAGE */
+  --background-brightness: 100%;
   --background-blur: 0px !important;
-  --transparency-alpha: 0.2;
+  --background-size: cover;
+  --background-position: center;
 }
 
-/* RÉGLAGE FORMAT (Étirer pour remplir Discord) */
-#app-mount {
+/* 2. FORCE L'IMAGE SUR TOUTES LES COUCHES PROFONDES */
+html, body, #app-mount, 
+.bg-1Q_c1X, 
+.appAsidePanelWrapper-ev4S9y, 
+.layer-2A6QeL, 
+.container-1e_seg {
   background-image: var(--background) !important;
-  background-size: 100% 100% !important; /* Force l'image à s'étirer sur toute la largeur et hauteur */
+  background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
+  background-color: transparent !important;
 }
 
-/* TON BLOC DE TRANSPARENCE PRÉFÉRÉ */
-.theme-dark, .theme-light {
+/* 3. TON BLOC FAVORI (RÉPÉTÉ ET RENFORCÉ) */
+.theme-dark, .theme-light, .theme-darker {
   --background-primary: transparent !important;
   --background-secondary: transparent !important;
+  --background-secondary-alt: transparent !important;
   --background-tertiary: transparent !important;
+  --background-accent: transparent !important;
   --background-floating: rgba(0,0,0,0.8) !important;
+  --modal-background: rgba(0,0,0,0.8) !important;
+  --channeltextarea-background: rgba(0,0,0,0.5) !important;
 }
 
-/* NETTOYAGE DES COUCHES SUPPLÉMENTAIRES */
-.bg-1Q_c1X, [class^="app_"], [class^="bg_"] {
+/* 4. SUPPRESSION MASSIVE PAR MOTS-CLÉS (LE NETTOYEUR GIGA LONG) */
+[class*="background"],
+[class*="chat_"],
+[class*="content_"],
+[class*="container_"],
+[class*="sidebar_"],
+[class*="members_"],
+[class*="panels_"],
+[class*="wrapper_"],
+[class*="standardSidebarView"],
+[class*="scroller_"],
+[class*="privateChannels_"],
+[class*="typeWindows_"],
+[class*="guilds_"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 5. FIX POUR LES ZONES RÉCALCITRANTES */
+.container-2cd8Mz, .mainContent-u_W2WD, .members-3WRC_L, .container-ZMc96U {
   background: transparent !important;
 }
 
-/* TEXTE ET ACCENTS */
-* {
-  color: var(--text-color) !important;
+/* 6. LISIBILITÉ (ON AJOUTE UN VOILE NOIR TRÈS LÉGER POUR VOIR LES MESSAGES) */
+.chatContent-3K79t5, .sidebar-1tnWFu {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(0px);
 }
 
+/* 7. TEXTE VERT PARTOUT */
+* {
+  color: var(--text-color) !important;
+  fill: var(--main-color) !important; /* Pour les icônes */
+}
+
+/* 8. BARRE DE MESSAGE */
 [class^="scrollableContainer_"] {
-  background: rgba(0, 0, 0, 0.8) !important;
-  border: 1px solid var(--main-color) !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  border: 2px solid var(--main-color) !important;
+  border-radius: 8px;
+}
+
+/* 9. SUPPRESSION DES BORDURES GRISES DÉGUEULASSES */
+[class*="separator"], [class*="guildSeparator"] {
+  display: none !important;
+}
+
+/* 10. FORCE LE "NO-SHADOW" */
+[class*="shadow"] {
+  box-shadow: none !important;
 }
