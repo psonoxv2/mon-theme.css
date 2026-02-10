@@ -1,67 +1,62 @@
 /**
  * @name Yuno Theme
  * @author psonox
- * @version 1.1
+ * @version 1.2
  * @description Dark Yuno green horror theme
  */
 
-/* VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
 :root {
-  --background: url('[https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg](https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg)');
+  --background-image: url('https://cdn.discordapp.com/attachments/1119671653161513031/1470741792528928956/2d932fba9c8099fff255153da383b2d7.jpg');
   --text-color: #b7ffcc;
   --primary: #00ff88;
-  --primary-glow: rgba(0, 255, 136, 0.6);
-  --dark-green: rgba(0, 120, 60, 0.7);
-  --panel-dark: rgba(0, 0, 0, 0.85);
-  --panel: rgba(0, 0, 0, 0.6);
-  --panel-light: rgba(0, 0, 0, 0.4);
+  --primary-glow: rgba(0, 255, 136, 0.4);
+  --panel-color: rgba(0, 0, 0, 0.7);
 }
 
-/* BACKGROUND GLOBAL */
-.appMount-2yBXZl, .appAsidePanelWrapper-ev4S9y {
-  background: var(--background) center/cover no-repeat fixed !important;
+/* On force le fond sur TOUTE l'application */
+#app-mount, 
+body {
+  background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* PANELS TRANSPARENTS */
-.container-2cd8Mz,
-.sidebar-1tnWFu,
+/* On rend tout transparent pour voir l'image derrière */
+.appAsidePanelWrapper-ev4S9y,
+.notInteractive-2z1F92,
+.wrapper-38W3S4,
+.bg-1Q_c1X,
+.container-1e_seg,
 .chat-2ZfjoI,
-.membersWrap-3NUR2t,
-.container-1NXEtd,
-.container-ZMc96U {
-  background: var(--panel) !important;
-  backdrop-filter: blur(6px);
+.container-ZMc96U,
+.sidebar-1tnWFu,
+.members-3WRC_L,
+.members-3WRC_L > div {
+  background: transparent !important;
 }
 
-/* BARRE DU HAUT */
-.titleBar-1it3bQ {
-  background: var(--panel-dark) !important;
+/* Ajout d'un filtre sombre/flou sur les panneaux pour la lisibilité */
+.sidebar-1tnWFu, 
+.chat-2ZfjoI, 
+.membersWrap-3NUR2t {
+  background: var(--panel-color) !important;
+  backdrop-filter: blur(8px);
 }
 
-/* TEXTE */
+/* Couleur du texte globale */
 * {
-  color: var(--text-color);
+  color: var(--text-color) !important;
 }
 
-/* HOVER + ACCENTS */
-.button-1EGGcP:hover,
-.interactive-iyXY_x:hover,
-.selected-1-Z6gm {
-  background: var(--primary-glow) !important;
+/* Barre de saisie de message */
+.scrollableContainer-15eg7h {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* MESSAGES */
-.message-2CShn3:hover {
-  background: var(--panel-light) !important;
-}
-
-/* SCROLLBAR */
+/* Scrollbar fluo */
 ::-webkit-scrollbar-thumb {
   background: var(--primary) !important;
-}
-
-/* INPUT */
-.scrollableContainer-15eg7h {
-  background: var(--panel-dark) !important;
-  border: 1px solid var(--primary-glow);
+  border-radius: 10px;
 }
