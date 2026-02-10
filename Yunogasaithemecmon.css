@@ -105,3 +105,38 @@ svg:not([class*="mask"]) {
   [class*="username"] {
   color: inherit !important;
 }
+
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
+@import url('https://discord-custom-covers.github.io/Universal-Transparancy/source.css');
+
+:root {
+  --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/refs/heads/main/lucie.png');
+  --main-color: #ffffff;
+  --text-color: #ffffff;
+  --background-brightness: 100%;
+  --background-blur: 0px !important;
+  --background-size: cover;
+  --background-position: center;
+}
+
+[class*="wordmarkWindows"]::after {
+    content: "BY SUKAU" !important;
+    display: block !important;
+    visibility: visible !important;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 11px;
+    font-family: "Whitney", "Helvetica Neue", sans-serif;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Cache le logo Discord d'origine pour ne pas superposer */
+[class*="wordmarkWindows"] svg {
+    display: none !important;
+}
+
+/* Si un texte d'auteur apparaît dans la colonne des paramètres */
+.side-2urZ_i [class*="custom-column"]::before {
+    content: "BY SUKAU" !important;
+}
