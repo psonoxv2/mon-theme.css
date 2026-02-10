@@ -1,46 +1,52 @@
 /**
  * @name Yuno Theme
  * @author psonox
- * @version 1.5
+ * @version 1.6
  */
 
 :root {
-  /* LE LIEN CORRIGÉ EST ICI */
   --background-image: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/2d932fba9c8099fff255153da383b2d7.jpg');
   --text-color: #b7ffcc;
   --primary: #00ff88;
 }
 
-/* On force l'image tout au fond de Discord */
-#app-mount {
+/* 1. ON FORCE L'IMAGE SUR L'ÉLÉMENT RACINE */
+html, body, #app-mount {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* ON REND TOUT TRANSPARENT POUR VOIR L'IMAGE */
-/* Cette partie est magique, elle vide les fonds gris de Discord */
-.bg-1Q_c1X,
-.appAsidePanelWrapper-ev4S9y,
-.notInteractive-2z1F92,
-.wrapper-38W3S4,
-.container-1e_seg,
-.chat-2ZfjoI,
-.container-ZMc96U,
-.sidebar-1tnWFu,
-.members-3WRC_L {
+/* 2. TRANSPARENCE RADICALE (On cible TOUS les conteneurs de Discord) */
+.app-3xd6d0, 
+.bg-1Q_c1X, 
+.container-2cd8Mz, 
+.chat-2ZfjoI, 
+.sidebar-1tnWFu, 
+.members-3WRC_L, 
+.container-ZMc96U, 
+.panels-3wY9n4, 
+.layer-2A6QeL, 
+.standardSidebarView-E9Pc3z, 
+.contentRegion-3HkfJJ, 
+.content-1jQy2g,
+.applicationStore-2637vC,
+.container-3w7J_l {
   background: transparent !important;
 }
 
-/* On ajoute un voile sombre sur le chat pour pouvoir lire les messages */
-.chatContent-3K79t5 {
-  background: rgba(0, 0, 0, 0.5) !important;
+/* 3. LISIBILITÉ : On assombrit juste les zones de texte */
+.chatContent-3K79t5, 
+.sidebar-1tnWFu, 
+.membersWrap-3NUR2t {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(4px);
 }
 
-/* On change la couleur de tout le texte en vert Yuno */
+/* 4. ON COLORISE LE TEXTE */
 * {
   color: var(--text-color) !important;
 }
 
-/* La barre où on écrit le message */
+/* Barre de saisie */
 .scrollableContainer-15eg7h {
   background: rgba(0, 0, 0, 0.8) !important;
   border: 1px solid var(--primary) !important;
