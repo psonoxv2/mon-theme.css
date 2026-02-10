@@ -1,7 +1,7 @@
 /**
- * @name Yuno Theme
+ * @name Yuno Theme Ultra
  * @author psonox
- * @version 1.7
+ * @version 2.0
  */
 
 :root {
@@ -10,44 +10,43 @@
   --primary: #00ff88;
 }
 
-/* On force l'image sur l'élément que Discord utilise pour le gris de base */
-.bg-1Q_c1X, 
-.appMount-2yBXZl, 
+/* 1. ON FORCE LE FOND SUR L'ÉLÉMENT RACINE (RIEN NE PEUT ÊTRE DERRIÈRE) */
+#app-mount, 
 body {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* Cette classe cache souvent tout au dernier moment */
-.layer-2A6QeL, 
-.container-1e_seg, 
-.app-3xd6d0 {
+/* 2. LE "NETTOYEUR" UNIVERSEL */
+/* On dit à TOUS les conteneurs principaux de devenir transparents */
+[class^="app_"],
+[class^="bg_"],
+[class^="container_"],
+[class^="chat_"],
+[class^="content_"],
+[class^="sidebar_"],
+[class^="panels_"],
+[class^="members_"],
+[class^="layer_"],
+[class^="standardSidebarView_"] {
   background: transparent !important;
 }
 
-/* Supprime le gris des salons et de la liste d'amis */
-.container-2cd8Mz, 
-.chat-2ZfjoI, 
-.sidebar-1tnWFu, 
-.container-ZMc96U, 
-.panels-3wY9n4, 
-.members-3WRC_L {
-  background: transparent !important;
-}
-
-/* On ajoute un flou sombre pour que ce soit lisible et stylé */
-.chatContent-3K79t5, 
-.sidebar-1tnWFu {
-  background: rgba(0, 0, 0, 0.6) !important;
+/* 3. ON RECRÉE LES ZONES DE LECTURE (Sinon c'est illisible) */
+[class^="chatContent_"] {
+  background: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(4px);
 }
 
-/* TEXTE VERT */
+[class^="sidebar_"] {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 4. TEXTE VERT ET ACCENTS */
 * {
   color: var(--text-color) !important;
 }
 
-/* Fix pour la barre de recherche et d'écriture */
-.scrollableContainer-15eg7h {
+[class^="scrollableContainer_"] {
   background: rgba(0, 0, 0, 0.8) !important;
   border: 1px solid var(--primary) !important;
 }
