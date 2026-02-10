@@ -1,0 +1,16 @@
+/* Change la couleur principale */
+:root {
+  --brand-experiment: #8b5cf6;
+  --brand-experiment-560: #7c3aed;
+}
+
+/* Fond principal */
+.appMount-2yBXZl {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+/* Messages */
+.message-2CShn3 {
+  border-radius: 10px;
+  padding: 6px;
+}
