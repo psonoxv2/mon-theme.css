@@ -13,12 +13,12 @@
   https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/Yunogasaithemecmon.css
   
   /* COULEURS */
-  --main-color: #00ff88;
-  --text-color: #b7ffcc;
+  --main-color: #000000;
+  --text-color: #ffffff;
   
   /* RÉGLAGES IMAGE */
   --background-brightness: 100%;
-  --background-blur: 0px !important;
+  --background-blur: 15px !important;
   --background-size: cover;
   --background-position: center;
 }
