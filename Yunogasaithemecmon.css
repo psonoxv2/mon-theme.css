@@ -1,7 +1,7 @@
 /**
- * @name Yuno Theme Ultra
+ * @name Yuno Theme Absolute
  * @author psonox
- * @version 2.0
+ * @version 3.0
  */
 
 :root {
@@ -10,43 +10,39 @@
   --primary: #00ff88;
 }
 
-/* 1. ON FORCE LE FOND SUR L'ÉLÉMENT RACINE (RIEN NE PEUT ÊTRE DERRIÈRE) */
-#app-mount, 
-body {
+/* 1. ON FORCE LE FOND SUR CHAQUE COUCHE DE BASE */
+html, body, #app-mount, [class^="appAsidePanelWrapper_"] {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* 2. LE "NETTOYEUR" UNIVERSEL */
-/* On dit à TOUS les conteneurs principaux de devenir transparents */
-[class^="app_"],
-[class^="bg_"],
-[class^="container_"],
-[class^="chat_"],
-[class^="content_"],
-[class^="sidebar_"],
-[class^="panels_"],
-[class^="members_"],
-[class^="layer_"],
-[class^="standardSidebarView_"] {
+/* 2. ON SUPPRIME LE GRIS DE MANIÈRE RADICALE */
+/* On cible TOUT ce qui ressemble à un fond sombre de Discord */
+#app-mount [class*="background"],
+#app-mount [class*="container"],
+#app-mount [class*="baseLayer"],
+#app-mount [class*="layout"],
+#app-mount [class*="inner_"],
+#app-mount [class*="content_"],
+#app-mount [class*="chat_"],
+#app-mount [class*="sidebar_"],
+#app-mount [class*="members_"],
+#app-mount [class*="panels_"],
+#app-mount [class*="wrapper_"] {
+  background-color: transparent !important;
   background: transparent !important;
 }
 
-/* 3. ON RECRÉE LES ZONES DE LECTURE (Sinon c'est illisible) */
-[class^="chatContent_"] {
-  background: rgba(0, 0, 0, 0.5) !important;
+/* 3. ON RECRÉE UNE COUCHE SOMBRE LÉGÈRE (Sinon on ne voit rien) */
+[class^="sidebar_"], [class^="chatContent_"], [class^="membersWrap_"] {
+  background: rgba(0, 0, 0, 0.65) !important;
   backdrop-filter: blur(4px);
 }
 
-[class^="sidebar_"] {
-  background: rgba(0, 0, 0, 0.7) !important;
-}
-
-/* 4. TEXTE VERT ET ACCENTS */
+/* 4. ON COLORISE TOUT LE TEXTE */
 * {
   color: var(--text-color) !important;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5); /* Pour mieux lire sur l'image */
 }
 
-[class^="scrollableContainer_"] {
-  background: rgba(0, 0, 0, 0.8) !important;
-  border: 1px solid var(--primary) !important;
-}
+/* 5. FIX BARRE DE SAISIE */
+[class^="scroll
