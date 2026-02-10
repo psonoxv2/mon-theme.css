@@ -101,7 +101,7 @@ svg:not([class*="mask"]) {
   color: inherit !important;
 }
 
-/* 11. SIGNATURE BY SUKAU */
+/* 11. SIGNATURE BY SUKAU & REMPLACEMENT DEVILBRO */
 [class*="wordmarkWindows"]::after {
     content: "BY SUKAU" !important;
     display: block !important;
@@ -114,12 +114,25 @@ svg:not([class*="mask"]) {
     color: rgba(255,255,255,0.5);
 }
 
-/* Cache le logo Discord d'origine */
 [class*="wordmarkWindows"] svg {
     display: none !important;
 }
 
-/* Texte d'auteur dans les paramètres */
-.side-2urZ_i [class*="custom-column"]::before {
-    content: "BY SUKAU" !important;
+/* Remplacement de DevilBro dans les paramètres et les colonnes */
+.side-2urZ_i [class*="custom-column"]::before,
+[class*="developer-name"], 
+[aria-label="DevilBro"],
+.bda-author {
+    content: "SUKAU" !important;
+    color: var(--text-color) !important;
+}
+
+/* Masque spécifiquement le texte "DevilBro" s'il est dans une balise sans ::before */
+[title*="DevilBro"], [aria-label*="DevilBro"] {
+    font-size: 0 !important;
+}
+
+[title*="DevilBro"]::after, [aria-label*="DevilBro"]::after {
+    content: "SUKAU";
+    font-size: 12px !important;
 }
