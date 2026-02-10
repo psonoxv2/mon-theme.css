@@ -5,20 +5,20 @@
  */
 
 /* 1. MOTEURS DE TRANSPARENCE EXTERNES */
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css');
 @import url('https://discord-custom-covers.github.io/Universal-Transparancy/source.css');
 
 :root {
+  /* TON IMAGE */
+  --background: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/refs/heads/main/lucie.png');
 
-  /* TON IMAGE */  
-  https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/Yunogasaithemecmon.css
-  
   /* COULEURS */
-  --main-color: #000000;
-  --text-color: #ffffff;
-  
+  --main-color: #00ff88;
+  --text-color: #b7ffcc;
+
   /* RÉGLAGES IMAGE */
   --background-brightness: 100%;
-  --background-blur: 15px !important;
+  --background-blur: 0px !important;
   --background-size: cover;
   --background-position: center;
 }
