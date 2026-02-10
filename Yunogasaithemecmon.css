@@ -1,56 +1,61 @@
 /**
  * @name Yuno Theme
- * @author SUKAU
- * @version 1.3
+ * @author psonox
+ * @version 1.4
  */
+
+/* On importe la police horror */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 :root {
   --background-image: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/2d932fba9c8099fff255153da383b2d7.jpg');
   --text-color: #b7ffcc;
   --primary: #00ff88;
-  --panel-color: rgba(0, 0, 0, 0.6);
 }
 
-/* LA BASE : On applique l'image sur l'élément le plus profond possible */
-html, body, #app-mount {
+/* 1. ON FORCE L'IMAGE SUR TOUT LE FOND */
+#app-mount,
+body,
+.appAsidePanelWrapper-ev4S9y,
+.bg-1Q_c1X {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* LA TRANSPARENCE : On vide toutes les boîtes grises de Discord */
-#app-mount .container-2cd8Mz,
-#app-mount .layer-2A6QeL,
-#app-mount .standardSidebarView-E9Pc3z,
-#app-mount .contentRegion-3HkfJJ,
-#app-mount .applicationStore-2637vC,
-#app-mount .notInteractive-2z1F92,
-#app-mount .wrapper-38W3S4,
-#app-mount .bg-1Q_c1X,
-#app-mount .appAsidePanelWrapper-ev4S9y,
-#app-mount .chat-2ZfjoI,
-#app-mount .content-1jQy2g,
-#app-mount .sidebar-1tnWFu,
-#app-mount .container-ZMc96U,
-#app-mount .panels-3wY9n4 {
+/* 2. ON REND TOUT TRANSPARENT (La méthode radicale) */
+.app-3xd6d0,
+.bg-1Q_c1X,
+.container-2cd8Mz,
+.chat-2ZfjoI,
+.container-ZMc96U,
+.sidebar-1tnWFu,
+.panels-3wY9n4,
+.container-1NXEtd,
+.members-3WRC_L,
+.membersWrap-3NUR2t,
+.content-1jQy2g,
+.mainContent-20q_Hp,
+.pageWrapper-23p9K2,
+.layer-2A6QeL,
+.standardSidebarView-E9Pc3z,
+.contentRegion-3HkfJJ {
   background: transparent !important;
 }
 
-/* LISIBILITÉ : On remet un peu de sombre là où on écrit et on lit */
+/* 3. ON RECOUVRE AVEC UN FILTRE SOMBRE POUR LIRE */
 .sidebar-1tnWFu, 
+.chatContent-3K79t5, 
 .membersWrap-3NUR2t {
-  background: var(--panel-color) !important;
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(5px);
 }
 
-.chatContent-3K79t5 {
-  background: rgba(0, 0, 0, 0.4) !important; /* Pour mieux lire les messages */
+/* 4. TEXTE ET COULEURS */
+* {
+  color: var(--text-color) !important;
+  border-color: var(--primary) !important;
 }
-
-/* TEXTE ET ACCENTS */
-* { color: var(--text-color) !important; }
 
 .scrollableContainer-15eg7h {
   background: rgba(0, 0, 0, 0.8) !important;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary) !important;
 }
-
-::-webkit-scrollbar-thumb { background: var(--primary) !important; }
