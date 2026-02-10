@@ -7066,19 +7066,6 @@ img[src='/assets/387a7c504c96b992872d.svg'] {
 	display: none;
 }
 
-/* ----		15.8.		NOTIFICATIONBAR					---- */
-
-#app-mount .notice__6e2b9 {
-	border: none;
-	border-radius: 0;
-}
-#app-mount .notice_c5cd6a {
-	background-color: rgba(var(--transparencycolor_v), .6);
-}
-
-/* ----		15.9.		TOOLTIPS					---- */
-
-
 #app-mount .tooltip_c36707 {
 	border: unset;
 }
