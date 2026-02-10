@@ -1,61 +1,47 @@
 /**
  * @name Yuno Theme
  * @author psonox
- * @version 1.4
+ * @version 1.5
  */
 
-/* On importe la police horror */
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-
 :root {
+  /* LE LIEN CORRIGÉ EST ICI */
   --background-image: url('https://raw.githubusercontent.com/psonoxv2/mon-theme.css/main/2d932fba9c8099fff255153da383b2d7.jpg');
   --text-color: #b7ffcc;
   --primary: #00ff88;
 }
 
-/* 1. ON FORCE L'IMAGE SUR TOUT LE FOND */
-#app-mount,
-body,
-.appAsidePanelWrapper-ev4S9y,
-.bg-1Q_c1X {
+/* On force l'image tout au fond de Discord */
+#app-mount {
   background: var(--background-image) center/cover no-repeat fixed !important;
 }
 
-/* 2. ON REND TOUT TRANSPARENT (La méthode radicale) */
-.app-3xd6d0,
+/* ON REND TOUT TRANSPARENT POUR VOIR L'IMAGE */
+/* Cette partie est magique, elle vide les fonds gris de Discord */
 .bg-1Q_c1X,
-.container-2cd8Mz,
+.appAsidePanelWrapper-ev4S9y,
+.notInteractive-2z1F92,
+.wrapper-38W3S4,
+.container-1e_seg,
 .chat-2ZfjoI,
 .container-ZMc96U,
 .sidebar-1tnWFu,
-.panels-3wY9n4,
-.container-1NXEtd,
-.members-3WRC_L,
-.membersWrap-3NUR2t,
-.content-1jQy2g,
-.mainContent-20q_Hp,
-.pageWrapper-23p9K2,
-.layer-2A6QeL,
-.standardSidebarView-E9Pc3z,
-.contentRegion-3HkfJJ {
+.members-3WRC_L {
   background: transparent !important;
 }
 
-/* 3. ON RECOUVRE AVEC UN FILTRE SOMBRE POUR LIRE */
-.sidebar-1tnWFu, 
-.chatContent-3K79t5, 
-.membersWrap-3NUR2t {
-  background: rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(5px);
+/* On ajoute un voile sombre sur le chat pour pouvoir lire les messages */
+.chatContent-3K79t5 {
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
-/* 4. TEXTE ET COULEURS */
+/* On change la couleur de tout le texte en vert Yuno */
 * {
   color: var(--text-color) !important;
-  border-color: var(--primary) !important;
 }
 
+/* La barre où on écrit le message */
 .scrollableContainer-15eg7h {
   background: rgba(0, 0, 0, 0.8) !important;
-  border: 2px solid var(--primary) !important;
+  border: 1px solid var(--primary) !important;
 }
